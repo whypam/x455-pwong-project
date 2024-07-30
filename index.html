@@ -8,6 +8,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- jquery.min.js should be loaded before jquery.tablesorter.min.js because tablesorter requires basice jquery -->
+    <script
+      type="text/JavaScript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/JavaScript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
+    ></script>
     <link rel="stylesheet" href="./css/w3.css" />
     <style>
       body {
@@ -311,7 +320,54 @@
       </div>
       <hr />
 
-      <!-- Contact Section -->
+      <!-- Utensil Section -->
+      <div class="w3-content" style="max-width: 1100px">
+        <div class="w3-row w3-padding-64" id="utensil">
+          <h1 class="w3-center">Utensil</h1>
+          <div class="w3-padding-large">
+            <table id="myTable" class="w3-table-all">
+              <thead>
+                <tr class="w3-brown">
+                  <th>UTENSIL</th>
+                  <th>TYPE</th>
+                  <th>NAME</th>
+                  <th>SIZE</th>
+                </tr>
+              </thead>
+              <tr class="w3-hover-sand">
+                <td>
+                  <img src="./img/skillet-03.jpeg" style="width: 120px" />
+                </td>
+                <td>Cookware</td>
+                <td>Skillet</td>
+                <td>Medium</td>
+              </tr>
+              <tr class="w3-hover-sand">
+                <td>
+                  <img src="./img/wooden-spoons-01.jpeg" style="width: 120px" />
+                </td>
+                <td>Hand Tool</td>
+                <td>Wooden Spoon</td>
+                <td>Small</td>
+              </tr>
+              <tr class="w3-hover-sand">
+                <td><img src="./img/reamer-01.jpeg" style="width: 120px" /></td>
+                <td>Hand Tool</td>
+                <td>Citrus Reamer</td>
+                <td>Small</td>
+              </tr>
+              <tr class="w3-hover-sand">
+                <td>
+                  <img src="./img/stand-mixer-01.jpeg" style="width: 120px" />
+                </td>
+                <td>Electronic Appliance</td>
+                <td>Stand Mixer</td>
+                <td>Big</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
 
       <!-- End page content -->
     </div>
@@ -390,6 +446,18 @@
         dots[slideIndex - 1].className += " w3-opacity-off";
       }
       // end added for carousel
+
+      // begin added for sortable
+      $(document).ready(function () {
+        $("table#myTable").tablesorter({
+          sortList: [
+            [2, 1],
+          ] /* 1st number - column to sort, 2nd number - asending (2) or descending order (1) */,
+          CssAsc: "tablesorter-headerAsc",
+          CssDesc: "tablesorter-headerDesc",
+        });
+      });
+      // end added for sortable
     </script>
   </body>
 </html>
