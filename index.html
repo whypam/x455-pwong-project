@@ -46,6 +46,13 @@
         float: right;
         padding-left: 20px;
       }
+
+      /* center the carousel slide */
+      .mySlides {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+      }
     </style>
   </head>
   <body>
@@ -209,48 +216,71 @@
 
       <!-- Menu Section -->
       <div class="w3-row w3-padding-64" id="seasoning">
-        <div class="w3-col l6 w3-padding-large">
+        <div class="w3-padding-large">
           <h1 class="w3-center">Seasoning</h1>
-          <br />
-          <h4>Bread Basket</h4>
-          <p class="w3-text-grey">
-            Assortment of fresh baked fruit breads and muffins 5.50
-          </p>
-          <br />
+          <div class="w3-padding-large">
+            <!-- carousel -->
+            <div class="w3-content">
+              <!-- begin carousel slide show -->
+              <img
+                class="mySlides"
+                src="./img/salt-01.jpg"
+                style="width: 100%"
+              />
+              <img
+                class="mySlides"
+                src="./img/sugar-01.jpg"
+                style="width: 100%; display: none"
+              />
+              <img
+                class="mySlides"
+                src="./img/pepper-02.jpg"
+                style="width: 100%; display: none"
+              />
+              <img
+                class="mySlides"
+                src="./img/oil-02.jpg"
+                style="width: 100%; display: none"
+              />
+              <!-- end carousel slide show -->
 
-          <h4>Honey Almond Granola with Fruits</h4>
-          <p class="w3-text-grey">
-            Natural cereal of honey toasted oats, raisins, almonds and dates
-            7.00
-          </p>
-          <br />
-
-          <h4>Belgian Waffle</h4>
-          <p class="w3-text-grey">
-            Vanilla flavored batter with malted flour 7.50
-          </p>
-          <br />
-
-          <h4>Scrambled eggs</h4>
-          <p class="w3-text-grey">
-            Scrambled eggs, roasted red pepper and garlic, with green onions
-            7.50
-          </p>
-          <br />
-
-          <h4>Blueberry Pancakes</h4>
-          <p class="w3-text-grey">
-            With syrup, butter and lots of berries 8.50
-          </p>
-        </div>
-
-        <div class="w3-col l6 w3-padding-large">
-          <img
-            src="/w3images/tablesetting.jpg"
-            class="w3-round w3-image w3-opacity-min"
-            alt="Menu"
-            style="width: 100%"
-          />
+              <!-- begin carousel thumbnail -->
+              <!-- add thumbnail buttons for selecting a slide to show -->
+              <div class="w3-col s3">
+                <img
+                  class="demo w3-opacity w3-hover-opacity-off"
+                  src="./img/salt-01.jpg"
+                  style="width: 100%; cursor: pointer"
+                  onclick="currentDiv(1)"
+                />
+              </div>
+              <div class="w3-col s3">
+                <img
+                  class="demo w3-opacity w3-hover-opacity-off"
+                  src="./img/sugar-01.jpg"
+                  style="width: 100%; cursor: pointer"
+                  onclick="currentDiv(2)"
+                />
+              </div>
+              <div class="w3-col s3">
+                <img
+                  class="demo w3-opacity w3-hover-opacity-off"
+                  src="./img/pepper-02.jpg"
+                  style="width: 100%; cursor: pointer"
+                  onclick="currentDiv(3)"
+                />
+              </div>
+              <div class="w3-col s3">
+                <img
+                  class="demo w3-opacity w3-hover-opacity-off"
+                  src="./img/oil-02.jpg"
+                  style="width: 100%; cursor: pointer"
+                  onclick="currentDiv(4)"
+                />
+              </div>
+              <!-- end carousel thumbnail -->
+            </div>
+          </div>
         </div>
       </div>
 
@@ -360,6 +390,51 @@
         mySidebar.style.display = "none";
       }
       // end added for mobile version
+
+      // begin added for carousel
+      // step 2: add javascript to support carousel slideshow feature
+      var myIndex = 0;
+      carousel();
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000); // Change image every 2 seconds
+      }
+
+      // slideshow - carousel
+      function currentDiv(n) {
+        showDivs((slideIndex = n));
+        myIndex = n;
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-opacity-off";
+      }
+      // end added for carousel
     </script>
   </body>
 </html>
