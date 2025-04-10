@@ -491,9 +491,90 @@
       </div>
 
       <!-- Chef Section - lightbox -->
-      <div class="w3-container w3-padding-64" id="Chef">
+      <div class="w3-container w3-padding-64" id="chef">
         <h1 class="w3-center">Chef</h1>
-        <div class="w3-padding-large"></div>
+        <div class="w3-padding-large">
+          <div class="w3-row-padding" style="margin: 15px 0px">
+            <div class="w3-col s4">
+              <img
+                src="./img/chef-alice-waters-150x150.jpg"
+                style="width: 100%; cursor: zoom-in"
+                onclick="document.getElementById('modal01').style.display='block'"
+                class="w3-hover-shadow"
+              />
+            </div>
+            <div class="w3-col s4">
+              <img
+                src="./img/chef-april-bloomfield-150x150.jpg"
+                style="width: 100%; cursor: zoom-in"
+                onclick="document.getElementById('modal02').style.display='block'"
+                class="w3-hover-shadow"
+              />
+            </div>
+            <div class="w3-col s4">
+              <img
+                src="./img/chef-elena-arzak-150x150.jpg"
+                style="width: 100%; cursor: zoom-in"
+                onclick="document.getElementById('modal03').style.display='block'"
+                class="w3-hover-shadow"
+              />
+            </div>
+          </div>
+
+          <div
+            id="modal01"
+            class="w3-modal"
+            onclick="this.style.display='none'"
+          >
+            <span
+              class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright"
+              style="cursor: pointer"
+              >&times;</span
+            >
+
+            <div class="w3-modal-content w3-animate-zoom">
+              <h4 class="w3-center">Alice Waters - 1</h4>
+              <img src="./img/chef-alice-waters.png" style="width: 100%" />
+            </div>
+          </div>
+
+          <div
+            id="modal02"
+            class="w3-modal"
+            onclick="this.style.display='none'"
+          >
+            <span
+              class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright"
+              style="cursor: pointer"
+              >&times;</span
+            >
+
+            <div class="w3-modal-content w3-animate-zoom">
+              <h4 class="w3-center">April Bloomfield - 1</h4>
+              <img src="./img/chef-april-bloomfield.png" style="width: 100%" />
+            </div>
+          </div>
+
+          <div
+            id="modal03"
+            class="w3-modal"
+            onclick="this.style.display='none'"
+          >
+            <span
+              class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright"
+              style="cursor: pointer"
+              >&times;</span
+            >
+
+            <div class="w3-modal-content w3-animate-zoom">
+              <h4 class="w3-center">Elena Arzak - 1</h4>
+              <img
+                src="./img/chef-elena-arzak-150x150.jpg"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- End page content -->
