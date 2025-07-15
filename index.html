@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>W3.CSS Template</title>
+    <title>Catering</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -22,13 +22,21 @@
         font-family: "Playfair Display";
         letter-spacing: 5px;
       }
+
+      .myAchor {
+        text-decoration: none;
+      }
+
+      .myAchor:hover {
+        color: red !important;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
       <div
-        class="w3-bar w3-white w3-padding w3-card"
+        class="w3-bar w3-sand w3-padding w3-card w3-text-brown"
         style="letter-spacing: 4px"
       >
         <div>
@@ -67,23 +75,29 @@
     <!-- add sidebar on small screens when clicking the menu icon -->
     <!-- Source: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup -->
     <nav
-      class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-hide-medium w3-hide-large"
+      class="w3-sidebar w3-bar-block w3-sand w3-text-brown w3-large w3-card w3-animate-left w3-hide-medium w3-hide-large"
       style="display: none"
       id="mySidebar"
     >
       <a
         href="javascript:void(0)"
         onclick="w3_close()"
-        class="w3-bar-item w3-button w3-large w3-padding-16"
+        class="w3-bar-item w3-button w3-padding-16"
         >Close &times;</a
       >
-      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
+      <a href="#about" onclick="w3_close()" class="w3-bar-item myAchor"
         >About</a
       >
-      <a href="#menu" onclick="w3_close()" class="w3-bar-item w3-button"
+      <a
+        href="#menu"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-hover-text-green"
         >Menu</a
       >
-      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
+      <a
+        href="#contact"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-hover-text-green"
         >Contact</a
       >
     </nav>
@@ -147,7 +161,11 @@
       <hr />
 
       <!-- Menu Section -->
-      <div class="w3-row w3-padding-64" id="menu">
+      <div
+        class="w3-row w3-padding-64"
+        id="menu"
+        style="background-color: aquamarine"
+      >
         <div class="w3-col l6 w3-padding-large">
           <h1 class="w3-center">Our Menu</h1>
           <br />
