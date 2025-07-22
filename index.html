@@ -30,6 +30,12 @@
       .myAchor:hover {
         color: red !important;
       }
+
+      .mySlides {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+      }
     </style>
   </head>
   <body>
@@ -51,9 +57,11 @@
         <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
         <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
-          <a href="#about" class="w3-bar-item w3-button">About</a>
-          <a href="#menu" class="w3-bar-item w3-button">Menu</a>
-          <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+          <a href="#food" class="w3-bar-item w3-button">Food</a>
+          <a href="./seasoning.html" class="w3-bar-item w3-button">Seasoning</a>
+          <a href="#utensil" class="w3-bar-item w3-button">Utensil</a>
+          <a href="#cuttery" class="w3-bar-item w3-button">Cuttery</a>
+          <a href="#chef" class="w3-bar-item w3-button">Chef</a>
         </div>
 
         <!-- step 2: for mobile version -->
@@ -85,20 +93,30 @@
         class="w3-bar-item w3-button w3-padding-16"
         >Close &times;</a
       >
-      <a href="#about" onclick="w3_close()" class="w3-bar-item myAchor"
-        >About</a
-      >
+      <a href="#food" onclick="w3_close()" class="w3-bar-item myAchor">About</a>
       <a
-        href="#menu"
+        href="#seasoning"
         onclick="w3_close()"
         class="w3-bar-item w3-button w3-hover-text-green"
         >Menu</a
       >
       <a
-        href="#contact"
+        href="#utensil"
         onclick="w3_close()"
         class="w3-bar-item w3-button w3-hover-text-green"
         >Contact</a
+      >
+      <a
+        href="#cuttery"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-hover-text-green"
+        >Cuttery</a
+      >
+      <a
+        href="#Chef"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-hover-text-green"
+        >Chef</a
       >
     </nav>
 
@@ -110,111 +128,97 @@
     >
       <img
         class="w3-image"
-        src="/w3images/hamburger.jpg"
-        alt="Hamburger Catering"
+        src="./img/food-bkgd-02.png"
+        alt="food background image"
         width="1600"
         height="800"
       />
-      <div class="w3-display-bottomleft w3-padding-large w3-opacity">
-        <h1 class="w3-xxlarge">Le Catering</h1>
+      <div class="w3-display-bottomleft w3-padding-large w3-hide-small">
+        <h1 class="w3-xxlarge w3-text-sand">
+          Serving Breakfast ~ Lunch ~ Dinner
+        </h1>
       </div>
     </header>
 
     <!-- Page content -->
     <div class="w3-content" style="max-width: 1100px">
       <!-- About Section -->
-      <div class="w3-row w3-padding-64" id="about">
-        <div class="w3-col m6 w3-padding-large w3-hide-small">
-          <img
-            src="/w3images/tablesetting2.jpg"
-            class="w3-round w3-image w3-opacity-min"
-            alt="Table Setting"
-            width="600"
-            height="750"
-          />
-        </div>
-
-        <div class="w3-col m6 w3-padding-large">
-          <h1 class="w3-center">About Catering</h1>
-          <br />
-          <h5 class="w3-center">Tradition since 1889</h5>
-          <p class="w3-large">
-            The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor
-            sit amet, consectetur adipiscing elit consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.We only use
-            <span class="w3-tag w3-light-grey">seasonal</span> ingredients.
-          </p>
-          <p class="w3-large w3-text-grey w3-hide-medium">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum consectetur adipiscing
-            elit, sed do eiusmod temporincididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </div>
+      <div class="w3-row w3-padding-64" id="food"></div>
 
       <hr />
 
       <!-- Menu Section -->
       <div
         class="w3-row w3-padding-64"
-        id="menu"
+        id="seasoning"
         style="background-color: aquamarine"
       >
-        <div class="w3-col l6 w3-padding-large">
-          <h1 class="w3-center">Our Menu</h1>
-          <br />
-          <h4>Bread Basket</h4>
-          <p class="w3-text-grey">
-            Assortment of fresh baked fruit breads and muffins 5.50
-          </p>
-          <br />
+        <div class="w3-padding-large">
+          <h1 class="w3-center">Seasoning</h1>
+          <div>
+            <img class="mySlides" src="./img/oil-02.jpg" style="width: 100%" />
+          </div>
+          <div>
+            <img
+              class="mySlides"
+              src="./img/pepper-02.jpg"
+              style="width: 100%; display: none"
+            />
+          </div>
+          <div>
+            <img
+              class="mySlides"
+              src="./img/salt-01.jpg"
+              style="width: 100%; display: none"
+            />
+          </div>
+          <div>
+            <img
+              class="mySlides"
+              src="./img/sugar-01.jpg"
+              style="width: 100%; display: none"
+            />
+          </div>
 
-          <h4>Honey Almond Granola with Fruits</h4>
-          <p class="w3-text-grey">
-            Natural cereal of honey toasted oats, raisins, almonds and dates
-            7.00
-          </p>
-          <br />
-
-          <h4>Belgian Waffle</h4>
-          <p class="w3-text-grey">
-            Vanilla flavored batter with malted flour 7.50
-          </p>
-          <br />
-
-          <h4>Scrambled eggs</h4>
-          <p class="w3-text-grey">
-            Scrambled eggs, roasted red pepper and garlic, with green onions
-            7.50
-          </p>
-          <br />
-
-          <h4>Blueberry Pancakes</h4>
-          <p class="w3-text-grey">
-            With syrup, butter and lots of berries 8.50
-          </p>
-        </div>
-
-        <div class="w3-col l6 w3-padding-large">
-          <img
-            src="/w3images/tablesetting.jpg"
-            class="w3-round w3-image w3-opacity-min"
-            alt="Menu"
-            style="width: 100%"
-          />
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/oil-02.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(1)"
+            />
+          </div>
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/pepper-02.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(2)"
+            />
+          </div>
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/salt-01.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(3)"
+            />
+          </div>
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/sugar-01.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(4)"
+            />
+          </div>
         </div>
       </div>
 
       <hr />
 
       <!-- Contact Section -->
-      <div class="w3-container w3-padding-64" id="contact">
+      <div class="w3-container w3-padding-64" id="utensil">
         <h1>Contact</h1>
         <br />
         <p>
@@ -276,6 +280,14 @@
         </form>
       </div>
 
+      <div class="w3-container w3-padding-64" id="cuttery">
+        <h1>Cuttery</h1>
+      </div>
+
+      <div class="w3-container w3-padding-64" id="chef">
+        <h1>Chef</h1>
+      </div>
+
       <!-- End page content -->
     </div>
 
@@ -309,6 +321,51 @@
       function w3_close() {
         mySidebar.style.display = "none";
       }
+
+      // carousel slideshow begin
+      var myIndex = 0;
+      carousel();
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+
+      // slideshow - carousel
+      // hook each carousel button
+      function currentDiv(n) {
+        showDivs((slideIndex = n));
+        myIndex = n;
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-opacity-off";
+      }
+      // carousel slideshow end
     </script>
   </body>
 </html>
