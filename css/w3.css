@@ -814,6 +814,11 @@ a {
   left: 0;
   bottom: 0;
 }
+.my-display-button-hero-screen {
+  position: absolute;
+  right: 15%;
+  bottom: 30%;
+}
 .w3-display-bottomright {
   position: absolute;
   right: 0;
