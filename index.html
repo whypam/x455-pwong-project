@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>W3.CSS Template</title>
+    <title>Catering</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./css/w3.css" />
     <style>
       body {
@@ -24,20 +28,63 @@
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
       <div
-        class="w3-bar w3-white w3-padding w3-card"
+        class="w3-bar w3-sand w3-padding w3-card w3-text-brown"
         style="letter-spacing: 4px"
       >
-        <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
+        <div>
+          <a class="w3-padding-large w3-hide-small w3-right">
+            <i class="fa fa-shopping-basket"></i>
+          </a>
+          <a class="w3-padding-large w3-hide-small w3-right">
+            <i class="fa fa-search"></i>
+          </a>
+        </div>
+
+        <a href="#home" class="w3-bar-item w3-button w3-xlarge"
+          >Food & Cooking</a
+        >
         <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
-          <a href="#food" class="w3-bar-item w3-button">Food</a>
-          <a href="#seasoning" class="w3-bar-item w3-button">Seasoning</a>
-          <a href="#utensil" class="w3-bar-item w3-button">Utensil</a>
-          <a href="#cuttery" class="w3-bar-item w3-button">Cuttery</a>
-          <a href="#chef" class="w3-bar-item w3-button">Chef</a>
+          <a href="#food" class="w3-bar-item w3-button w3-large">Food</a>
+          <a href="#seasoning" class="w3-bar-item w3-button w3-large"
+            >Seasoning</a
+          >
+          <a href="#utensil" class="w3-bar-item w3-button w3-large">Utensil</a>
+          <a href="#cuttery" class="w3-bar-item w3-button w3-large">Cuttery</a>
+          <a href="#chef" class="w3-bar-item w3-button w3-large">Chef</a>
         </div>
+
+        <a
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+          onclick="w3_open()"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
     </div>
+
+    <nav
+      class="w3-sidebar w3-bar-block w3-sand w3-text-brown w3-card w3-animate-left w3-hide-medium w3-hide-large"
+      style="display: none"
+      id="mySidebar"
+    >
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-large w3-padding-16"
+        >Close &times;</a
+      >
+      <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Food</a
+      >
+      <a href="#seasoning" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Seasoning</a
+      >
+      <a href="#utensil" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Utensil</a
+      >
+    </nav>
 
     <!-- Header -->
     <header
@@ -267,5 +314,23 @@
         >
       </p>
     </footer>
+
+    <script>
+      // Toggle between showing and hiding the sidebar when clicking the menu icon
+      var mySidebar = document.getElementById("mySidebar");
+
+      function w3_open() {
+        if (mySidebar.style.display === "block") {
+          mySidebar.style.display = "none";
+        } else {
+          mySidebar.style.display = "block";
+        }
+      }
+
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+      }
+    </script>
   </body>
 </html>
