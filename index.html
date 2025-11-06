@@ -22,6 +22,17 @@
         font-family: "Playfair Display";
         letter-spacing: 5px;
       }
+
+      .my-scrolling {
+        height: 300px;
+        overflow: auto;
+      }
+
+      .mySlides {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+      }
     </style>
   </head>
   <body>
@@ -84,6 +95,12 @@
       <a href="#utensil" onclick="w3_close()" class="w3-bar-item w3-button"
         >Utensil</a
       >
+      <a href="#cuttery" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Seasoning</a
+      >
+      <a href="#chef" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Utensil</a
+      >
     </nav>
 
     <!-- Header -->
@@ -119,7 +136,7 @@
         </div>
 
         <div class="w3-col m6 w3-padding-large">
-          <h1 class="w3-center">About Catering</h1>
+          <h1 class="w3-center">Food</h1>
           <br />
           <h5 class="w3-center">Tradition since 1889</h5>
           <p class="w3-large">
@@ -144,50 +161,94 @@
 
       <hr />
 
-      <!-- Menu Section -->
+      <!-- Seasoning Section -->
       <div class="w3-row w3-padding-64" id="seasoning">
-        <div class="w3-col l6 w3-padding-large">
-          <h1 class="w3-center">Our Menu</h1>
-          <br />
-          <h4>Bread Basket</h4>
-          <p class="w3-text-grey">
-            Assortment of fresh baked fruit breads and muffins 5.50
-          </p>
-          <br />
+        <div class="w3-padding-large">
+          <h1 class="w3-center">Seasoning</h1>
 
-          <h4>Honey Almond Granola with Fruits</h4>
-          <p class="w3-text-grey">
-            Natural cereal of honey toasted oats, raisins, almonds and dates
-            7.00
-          </p>
-          <br />
+          <div>
+            <img class="mySlides" src="./img/salt-01.jpg" style="width: 100%" />
+            <img
+              class="mySlides"
+              src="./img/sugar-01.jpg"
+              style="width: 100%; display: none"
+            />
+            <img
+              class="mySlides"
+              src="./img/pepper-02.jpg"
+              style="width: 100%; display: none"
+            />
+            <img
+              class="mySlides"
+              src="./img/oil-02.jpg"
+              style="width: 100%; display: none"
+            />
+          </div>
 
-          <h4>Belgian Waffle</h4>
-          <p class="w3-text-grey">
-            Vanilla flavored batter with malted flour 7.50
-          </p>
-          <br />
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/salt-01.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(1)"
+            />
+          </div>
 
-          <h4>Scrambled eggs</h4>
-          <p class="w3-text-grey">
-            Scrambled eggs, roasted red pepper and garlic, with green onions
-            7.50
-          </p>
-          <br />
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/sugar-01.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(2)"
+            />
+          </div>
 
-          <h4>Blueberry Pancakes</h4>
-          <p class="w3-text-grey">
-            With syrup, butter and lots of berries 8.50
-          </p>
-        </div>
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/oil-02.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(3)"
+            />
+          </div>
 
-        <div class="w3-col l6 w3-padding-large">
-          <img
-            src="/w3images/tablesetting.jpg"
-            class="w3-round w3-image w3-opacity-min"
-            alt="Menu"
-            style="width: 100%"
-          />
+          <div class="w3-col s3">
+            <img
+              class="demo w3-opacity w3-hover-opacity-off"
+              src="./img/pepper-02.jpg"
+              style="width: 100%; cursor: pointer; padding: 7px"
+              onclick="currentDiv(4)"
+            />
+          </div>
+
+          <div class="w3-row">
+            <div class="w3-col s4 w3-padding w3-sand">
+              <div
+                class="w3-brown w3-center"
+                style="
+                  margin-left: -16px;
+                  margin-right: -16px;
+                  margin-top: -18px;
+                "
+              >
+                <h2>Vegetables</h2>
+              </div>
+              <div class="my-scrolling" style="padding-right: 10px">
+                <p>
+                  Vegetables are parts of plants that are consumed by humans or
+                  other animals as food. The original meaning is still commonly
+                  used and is applied to plants collectively to refer to all
+                  edible plant matter, including the flowers, fruits, stems,
+                  leaves, roots, and seeds. An alternate definition of the term
+                  is applied somewhat arbitrarily, often by culinary and
+                  cultural tradition. It may exclude foods derived from some
+                  plants that are fruits, flowers, nuts, and cereal grains, but
+                  include savoury fruits such as tomatoes and courgettes,
+                  flowers such as broccoli, and seeds such as pulses.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -195,7 +256,7 @@
 
       <!-- Contact Section -->
       <div class="w3-container w3-padding-64" id="utensil">
-        <h1>Contact</h1>
+        <h1 class="w3-center">Utensil</h1>
         <br />
         <p>
           We offer full-service catering for any event, large or small. We
@@ -331,6 +392,51 @@
       function w3_close() {
         mySidebar.style.display = "none";
       }
+
+      // carousel slideshow begin
+      var myIndex = 0;
+      carousel();
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+
+      // slideshow - carousel
+      // hook each carousel button
+      function currentDiv(n) {
+        showDivs((slideIndex = n));
+        myIndex = n;
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-opacity-off";
+      }
+      // carousel slideshow end
     </script>
   </body>
 </html>

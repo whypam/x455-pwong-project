@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catering</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/w3.css" />
+    <style>
+      body {
+        font-family: "Times New Roman", Georgia, Serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+      }
+
+      .my-scrolling {
+        height: 300px;
+        overflow: auto;
+      }
+
+      .mySlides {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div
+        class="w3-bar w3-sand w3-padding w3-card w3-text-brown"
+        style="letter-spacing: 4px"
+      >
+        <div>
+          <a class="w3-padding-large w3-hide-small w3-right">
+            <i class="fa fa-shopping-basket"></i>
+          </a>
+          <a class="w3-padding-large w3-hide-small w3-right">
+            <i class="fa fa-search"></i>
+          </a>
+        </div>
+
+        <a href="./index.html" class="w3-bar-item w3-button w3-xlarge"
+          >Food & Cooking</a
+        >
+        <!-- Right-sided navbar links. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="#food" class="w3-bar-item w3-button w3-large">Food</a>
+          <a href="#seasoning" class="w3-bar-item w3-button w3-large"
+            >Seasoning</a
+          >
+          <a href="#utensil" class="w3-bar-item w3-button w3-large">Utensil</a>
+          <a href="#cuttery" class="w3-bar-item w3-button w3-large">Cuttery</a>
+          <a href="#chef" class="w3-bar-item w3-button w3-large">Chef</a>
+        </div>
+
+        <a
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+          onclick="w3_open()"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav
+      class="w3-sidebar w3-bar-block w3-sand w3-text-brown w3-card w3-animate-left w3-hide-medium w3-hide-large"
+      style="display: none"
+      id="mySidebar"
+    >
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-large w3-padding-16"
+        >Close &times;</a
+      >
+      <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Food</a
+      >
+      <a href="#seasoning" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Seasoning</a
+      >
+      <a href="#utensil" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Utensil</a
+      >
+    </nav>
+
+    <!-- Header -->
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width: 1100px">
+      <!-- About Section -->
+      <div class="w3-row w3-padding-64" id="food">
+        <h1>Food Page</h1>
+      </div>
+
+      <hr />
+
+      <!-- Vegetables Section -->
+
+      <hr />
+
+      <!-- Contact Section -->
+
+      <div class="w3-container w3-padding-64" id="chef"></div>
+
+      <!-- End page content -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-32">
+      <p>
+        Powered by
+        <a
+          href="https://www.w3schools.com/w3css/default.asp"
+          title="W3.CSS"
+          target="_blank"
+          class="w3-hover-text-green"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      // Toggle between showing and hiding the sidebar when clicking the menu icon
+      var mySidebar = document.getElementById("mySidebar");
+
+      function w3_open() {
+        if (mySidebar.style.display === "block") {
+          mySidebar.style.display = "none";
+        } else {
+          mySidebar.style.display = "block";
+        }
+      }
+
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+      }
+
+      // carousel slideshow begin
+      var myIndex = 0;
+      carousel();
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+
+      // slideshow - carousel
+      // hook each carousel button
+      function currentDiv(n) {
+        showDivs((slideIndex = n));
+        myIndex = n;
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-opacity-off";
+      }
+      // carousel slideshow end
+    </script>
+  </body>
+</html>
